@@ -1,0 +1,14 @@
+#!/bin/sh
+
+
+CURDIR=$(pwd)
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CURDIR
+export PATH=$PATH:$CURDIR
+
+chmod 777 ./mediasrv
+ulimit -n 50000
+#while [ 1 ]
+#do
+    gdb ./mediasrv
+#    sleep 10
+#done
