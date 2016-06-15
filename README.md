@@ -14,11 +14,18 @@ For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 性能：  
 1） 7x24 全天候稳定运行。  
 2）Intel E3 CPU ，10Gb网卡,RTMP稳定输出 8.8Gb/s，HLS稳定输出9Gb/s，稳定并发8000连接   
+3）支持视频秒开,出画面速度0.2-0.3s
 
 额外功能：  
 1）支持插件管理推流权限，推流状态可实时更新到数据库或者redis   
 2）流媒体服务器直接支持后台录像,录制格式MP4/TS，也可两种格式同时录制   
 
-
+访问地址示例：
+HLS http://127.0.0.1:280/chid/playlist.m3u8    
+RTMP rtmp://127.0.0.1:1935/live/chid    
+RTSP rtsp://127.0.0.1:554/chid     
+HTTP-TS http://127.0.0.1:281/chid.ts     
+HTTP-FLV http://127.0.0.1:281/chid.flv    
+HTTP-AAC http://127.0.0.1:281/chid.aac     
 
 **欢迎大家提出建议 QQ群:144324691**
