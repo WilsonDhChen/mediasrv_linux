@@ -29,6 +29,10 @@ HTTP-TS http://127.0.0.1:281/chid.ts
 HTTP-FLV http://127.0.0.1:281/chid.flv    
 HTTP-AAC http://127.0.0.1:281/chid.aac     
 
+**其他版本**   
+Windows  https://github.com/WilsonDhChen/mediasrv_windows     
+MacOSX   https://github.com/WilsonDhChen/mediasrv_macosx
+
 **关于软件更新**   
 Linux 版本我们会实时更新   
 Windows 和 MacOSX版本我们会在重大升级更新一次
