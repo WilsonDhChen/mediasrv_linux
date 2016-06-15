@@ -12,9 +12,15 @@ Supported protocols:
 For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 
 **性能：**  
-1） 7x24 全天候稳定运行。  
+1） 7x24 全天候稳定运行。　　
 2）Intel E3 CPU ，10Gb网卡,RTMP稳定输出 8.8Gb/s，HLS稳定输出9Gb/s，稳定并发8000连接   
 3）支持视频秒开,出画面速度0.2-0.3s
+
+
+**支持的协议：**  
+1）输入协议，RTMP and ETS    
+2）输出协议，RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS HTTP-AAC
+
 
 **额外功能：**  
 1）支持插件管理推流权限，推流状态可实时更新到数据库或者redis。   
@@ -28,6 +34,10 @@ RTSP rtsp://127.0.0.1:554/chid
 HTTP-TS http://127.0.0.1:281/chid.ts     
 HTTP-FLV http://127.0.0.1:281/chid.flv    
 HTTP-AAC http://127.0.0.1:281/chid.aac     
+
+**成功案例** 
+已经广泛给各大集成商做OEM，行业涉及教育，武警，石化
+
 
 **其他版本**   
 Windows  https://github.com/WilsonDhChen/mediasrv_windows     
