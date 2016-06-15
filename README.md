@@ -19,3 +19,6 @@ For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 1）支持插件管理推流权限，推流状态可实时更新到数据库或者redis   
 2）流媒体服务器直接支持后台录像,录制格式MP4/TS，也可两种格式同时录制   
 
+
+
+**欢迎大家提出建议**
