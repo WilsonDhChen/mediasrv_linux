@@ -1,27 +1,17 @@
-# mediasrv_linux
-1)
-chmod 777 ./mediasrv
-chmod 777 ./mediasrv_sh
-chmod 777 ./mediasrv_screen
-chmod 777 ./mediasrv_gdb
+# ETS Mediasrv
 
-if you want use screen start the application, you must install screen command first,if you not 
-installed it
-2)  
-access address
+ETS Mediasrv which is an excellent cross-platform Live Streaming Server, developed by f117cdh.
 
-HLS http://127.0.0.1:280/chid/playlist.m3u8 
+Support Linux Windows MacOSX and ARM-Linux platform.
 
-RTMP rtmp://127.0.0.1:1935/live/chid 
+Supported protocols
 
-RTSP rtsp://127.0.0.1:554/chid 
+Input protocol, RTMP and ETS 
 
-HTTP-TS http://127.0.0.1:281/chid.ts 
+Output protocol, RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS HTTP-AAC
 
-HTTP-FLV http://127.0.0.1:281/chid.flv 
 
-HTTP-AAC http://127.0.0.1:281/chid.aac 
-
+For commercial support, please contact f117cdh@qq.com.
 
 
 
