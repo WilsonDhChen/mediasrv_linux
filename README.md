@@ -19,7 +19,7 @@ For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 
 **支持的协议：**  
 1）输入协议，RTMP and ETS    
-2）输出协议，RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS HTTP-AAC
+2）输出协议，RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS(支持混合一路GPS数据) HTTP-AAC
 
 
 **额外功能：**  
