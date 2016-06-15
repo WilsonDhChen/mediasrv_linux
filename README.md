@@ -12,7 +12,7 @@ Supported protocols:
 For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 
 **性能：**  
-1） 7x24 全天候稳定运行。　　
+1） 7x24 全天候稳定运行。   
 2）Intel E3 CPU ，10Gb网卡,RTMP稳定输出 8.8Gb/s，HLS稳定输出9Gb/s，稳定并发8000连接   
 3）支持视频秒开,出画面速度0.2-0.3s
 
