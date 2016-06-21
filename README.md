@@ -16,6 +16,9 @@ For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 2）Intel E3 CPU ，10Gb网卡,RTMP稳定输出 8.8Gb/s，HLS稳定输出9Gb/s，稳定并发8000连接   
 3）支持视频秒开,出画面速度0.2-0.3s
 
+**关于并发：**  
+程序本身没有任何并发限制，理论单进程并发在6W左右，但是实际并发数取决于网卡的速率和CPU的性能以及视频码率。
+
 
 **支持的协议：**  
 1）输入协议，RTMP and ETS    
