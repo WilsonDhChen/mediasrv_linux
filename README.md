@@ -1,4 +1,7 @@
-﻿# ETS Mediasrv
+﻿# CDN come soon ! ! !
+
+
+# ETS Mediasrv
 
 ETS Mediasrv which is an excellent cross-platform Live Streaming Server, developed by f117cdh.
 
