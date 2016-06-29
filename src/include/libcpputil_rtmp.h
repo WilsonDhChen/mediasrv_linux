@@ -315,7 +315,7 @@ public:
 
 	
 	// if you override it please inherit from CRTMPConnContext
-	virtual CObjConnContext  * AllocConnContext();   
+	virtual CObjConnContext  * AllocConnContext(CObj *par);
 	virtual CObjNetIOBuffer *  CreateRTMPIoBuffer( int Size );
 public:
 	virtual int OnReceivedHandshake1(CRTMPConnContext *pContext ,const unsigned char * data, int length);

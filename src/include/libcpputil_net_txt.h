@@ -34,7 +34,7 @@ public:
     virtual ~CTxtNetAsync();
 
     // if you override it please inherit from CTxtConnContext
-    virtual CObjConnContext  * AllocConnContext();   
+	virtual CObjConnContext  * AllocConnContext(CObj *par);
     virtual CObjNetIOBuffer  * AllocTxtIOBuffer();
 public:
     virtual int OnTxtReadCompleted(CTxtConnContext *pContext, CObjNetIOBuffer *pBuffer);

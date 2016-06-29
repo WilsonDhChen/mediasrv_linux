@@ -127,9 +127,10 @@ typedef void * IO_HANDLE;
 
 #if !defined(_INI_ERROR)
 #define _INI_ERROR
-#define INI_ERROR_SECTION_NOTFIND -3
-#define INI_ERROR_FILEOPEN	-2
 #define INI_ERROR_VARNOTFIND -1
+#define INI_ERROR_SECTION_NOTFIND -2
+#define INI_ERROR_FILEOPEN	-3
+
 #endif
 
 #if !defined(_QUEUE_TYPE)

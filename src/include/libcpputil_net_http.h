@@ -127,7 +127,7 @@ public:
 	static void SetHttpServerInfo(const char *szInfo);
 
     // if you override it please inherit from CHttpConnContext
-    virtual CObjConnContext  * AllocConnContext( );
+	virtual CObjConnContext  * AllocConnContext(CObj *par);
     virtual CObjNetIOBuffer *  CreateHTTPIoBuffer( int Size );
 public:
     virtual int OnHttpRequest( CHttpConnContext *pContext);

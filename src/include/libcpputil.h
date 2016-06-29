@@ -2,9 +2,10 @@
 #ifndef _LIBCPPUTIL_H_
 #define _LIBCPPUTIL_H_
 
+#define _INET_ADDR_STR_LEN 84
 typedef struct tagINET_ADDR_STR
 {
-    char szAddr[60];
+	char szAddr[_INET_ADDR_STR_LEN];
     int  nPort;
 }INET_ADDR_STR;
 
@@ -278,6 +279,7 @@ public:
 	}
 	CObjPtr( const CObjPtr<T>& lp)
 	{
+		p = NULL;
 		*this = lp ;
 	}
 	~CObjPtr()

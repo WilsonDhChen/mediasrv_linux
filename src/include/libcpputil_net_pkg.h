@@ -46,7 +46,7 @@ public:
 	virtual int   GetPkgLen(CPkgConnContext *pContext, void  *pBufHead);
 
     // if you override it please inherit from CPkgConnContext
-    virtual CObjConnContext  * AllocConnContext();   
+	virtual CObjConnContext  * AllocConnContext(CObj *par);
 	virtual CObjNetIOBuffer *  CreatePkgBuffer( int Size );
 public:
     virtual int OnPkgReadCompleted(CPkgConnContext *pContext, CObjNetIOBuffer *pBuffer);

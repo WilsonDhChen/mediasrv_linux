@@ -56,8 +56,9 @@ public:
 
 #ifdef WIN32
     WSAOVERLAPPED m_ol;
-    SOCKET m_socAccepted;
+    SOCKET m_socAccept_Connect;
     unsigned int  m_nSequenceNumber;
+	BOOL   m_bV6;
 #else
 #endif
 
@@ -114,6 +115,7 @@ public:
 
 	unsigned int m_nWrittingBytes;
 
+	BOOL m_bConnecting;
     BOOL m_bBadConntext;
     BOOL m_bClosing ;
     TIME_T m_tmConnected;
@@ -283,17 +285,20 @@ public:
     static SOCKET ConnectAgentSks5(const char *szAgentUrl,const char *szIP,int nPort,unsigned int timeout = 10);
     BOOL AddSocket2Asyn(CObjConnContext *pSocketConnectByYourself);
 	BOOL AddSocket2Asyn(SOCKET soc, INET_ADDR_STR *remoteAddr = NULL, INET_ADDR_STR *localAddr = NULL);
+
+	BOOL Connect(const char *addr ,int port, CObj *par);
 public:
-    virtual CObjConnContext  * AllocConnContext();
+	virtual CObjConnContext  * AllocConnContext(CObj *par);
     virtual CObjNetIOBuffer  * AllocReadIOBuffer();
 	virtual CObj * CreateThreadContext(const CObj *threadObj);
 
     // return -1 , if you want block the connection
-    virtual int OnNewConnectionIncoming(CObjConnContext *pContext, CObjNetIOBuffer *pBuffer);  
-    virtual int OnNewConnectionOutgoing(CObjConnContext *pContext, CObjNetIOBuffer *pBuffer);
+    virtual int OnNewConnectionIncoming(CObjConnContext *pContext);  
+    virtual int OnNewConnectionOutgoing(CObjConnContext *pContext);
 
-    virtual int OnConnectionClosed(CObjConnContext *pContext, CObjNetIOBuffer *pBuffer);
-    virtual int OnConnectionError(CObjConnContext *pContext, CObjNetIOBuffer *pBuffer, int nError);
+	virtual int OnConnected(CObjConnContext *pContext);
+    virtual int OnConnectionClosed(CObjConnContext *pContext);
+
 
     virtual int OnReadCompleted(CObjConnContext *pContext, CObjNetIOBuffer *pBuffer);
     virtual int OnWriteCompleted(CObjConnContext *pContext, CObjNetIOBuffer *pBuffer);
@@ -344,6 +349,7 @@ public:
 	int  GetConnections();
 	void SetMaxInstance(int nMaxInstance);
 	void SetSessionTimeout(int timeout);
+	CObjNetAsync *GetIdleNet();
 public:
 	virtual CObjNetAsync *CreateNetInstance();
 	virtual int OnNewConnectionIncoming(CObjConnContext *pContext);

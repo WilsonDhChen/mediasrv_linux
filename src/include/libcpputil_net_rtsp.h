@@ -56,7 +56,7 @@ public:
 	virtual ~CRTSPNetAsync();
 
 	// if you override it please inherit from CRTSPConnContext
-	virtual CObjConnContext  * AllocConnContext();   
+	virtual CObjConnContext  * AllocConnContext(CObj *par);
 	virtual CObjNetIOBuffer  * AllocRTSPIOBuffer(int nLen = -1);
 	virtual int OnRTSPCommandReadCompleted(CRTSPConnContext *pContext, CObjNetIOBuffer *pBuffer);
 	virtual int OnRTSPDataReadCompleted(CRTSPConnContext *pContext, CObjNetIOBuffer *pBuffer);

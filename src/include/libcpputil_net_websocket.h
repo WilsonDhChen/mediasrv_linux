@@ -78,12 +78,12 @@ public:
     virtual ~CWebSocketNetAsync();
 
     // if you override it please inherit from CWebSocketConnContext
-    virtual CObjConnContext  * AllocConnContext();   
+	virtual CObjConnContext  * AllocConnContext(CObj *par);
 public:
 	virtual int  OnWebSocketConnectionIncoming(CWebSocketConnContext *pContext);
 	virtual int  OnWebSocketReadCompleted(CWebSocketConnContext *pContext, const unsigned char *szMessage, int nMessageLen , CWebSocketState::MessageType type );
 	virtual void OnWebSocketErrorMessage(CWebSocketConnContext *pContext, const char *szMessage);
-	virtual int  OnConnectionClosed(CObjConnContext *pContext, CObjNetIOBuffer *pBuffer);
+	
 public:
     virtual int OnReadCompleted(CObjConnContext *pContext, CObjNetIOBuffer *pBuffer);
 
