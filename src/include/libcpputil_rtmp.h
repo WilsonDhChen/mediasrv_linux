@@ -202,7 +202,6 @@ public:
 	CObjBuffer m_buf;
 
 	CRTMPState m_state;
-	int m_nBytesRead;
 	UINT8 m_nChannelOfSend;
 	BOOL m_bPlaying ;
 	BOOL m_bPlayCalled;

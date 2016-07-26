@@ -15,9 +15,12 @@ public:
 	BOOL Start();
 	void Stop();
 	BOOL IsRunning();
+    void SetReadTimeout(int milliseconds);
 	int  Write(const void *data , int nLen, int timeout = 1000);
+	BOOL EnableBinMode(BOOL bEnable);
 
 	virtual void OnData(const unsigned char *data, int nLen );
+    virtual void OnIdle();
 private:
 	void *m_obj;
 };

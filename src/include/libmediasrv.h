@@ -5,6 +5,19 @@
 	
 
 
+#if defined(_NO_MEDIASRV_EXPORT)
+#define _MEDIASRV_EXPORT
+#elif !defined(_MEDIASRV_EXPORT)
+#ifdef WIN32
+#ifdef _MSC_VER
+#define _MEDIASRV_EXPORT __declspec(dllimport)
+#else
+#define _MEDIASRV_EXPORT
+#endif
+#else
+#define _MEDIASRV_EXPORT
+#endif
+#endif
 
 
 
@@ -30,70 +43,49 @@ extern "C"
 
 
 
-	typedef BOOL ( MYAPI *_MediaSrvAuthentication)(const char *szAddr,const char *szUser,const char *szPwd,const char *szURL,const char *szTimeBegin);
-	BOOL MYAPI SetMediaSrvAuthenticationCallback( _MediaSrvAuthentication func);
 
-	typedef BOOL ( MYAPI *_MediaSrvDisconnected)(const char *szAddr,const char *szUser,const char *szPwd,const char *szURL,const char *szTimeBegin,const char *szTimeEnd,int totalSeconds);
-	BOOL MYAPI SetMediaSrvDisconnectedCallback( _MediaSrvDisconnected func);
-
-	typedef BOOL ( MYAPI *_MediaSrvError)(int ErrorCode ,const char *szMsg);
-	BOOL MYAPI SetMediaSrvErrorCallback( _MediaSrvError func);
 
 	BOOL MYAPI MediaSrvStart();
 	void MYAPI MediaSrvStop();
 
-	typedef enum tagMediaSessionNotifyType
-	{
-		SessionNotifyTypeUnknown,
-		SessionNotifyTypeAdd,
-		SessionNotifyTypeRemove,
-		ClientNotifyTypeAdd,
-		ClientNotifyTypeRemove,
-		SessionNotifyUpdateConnections,
-        SystemNotifyIdle,
-	}MediaSessionNotifyType;
+	
+	typedef int     (MYAPI *_MediaInitCallback)(const char *configFile, const char *appPath); //return TRUE success
+	typedef void *  (MYAPI *_MediaOpenCallback)(const char *configFile, const char *appPath);
+	typedef void    (MYAPI *_MediaCloseCallback)(void *handle);
 
-	typedef struct tagMediaSessionPar
-	{
-		const char *usr ;
-        const char *pwd ;
-		const char *Id;
-		const char *session ;
-		const char *nameOfDisplay ;
-		const char *timeBegin;
-		const char *timeEnd;
-		const char *urlOfJoin;
-		const char *remoteAddr;
-		const char *type;
-		const char *os;
-		INT64  bytesOfTransmit ;
-		INT64  bytesOfSend2Clients ;
-		int  sessionDurationOfSeconds; 
-		int  connections;
-	}MediaSessionPar;
-
-    typedef void  (MYAPI *_MediasrvCallback)(const char *cmd, const char *par);
-
-	typedef void * ( MYAPI *_MediaSessionNotifyOpen)(const char *configFile) ;
-	typedef void   ( MYAPI *_MediaSessionNotifyClose)(void *handle) ;
-	typedef void   ( MYAPI *_MediaSessionNotify)(void *handle, MediaSessionNotifyType type, const MediaSessionPar *par) ;
-    typedef void   ( MYAPI *_MediaSessionNotifySetCallback)(void *handle, _MediasrvCallback callback);
-
-//	void * MYAPI MediaSessionNotifyOpen(const char *configFile, _LogLevel log);
-//	void   MYAPI MediaSessionNotifyClose(void *handle) ;
-//	void   MYAPI MediaSessionNotify(void *handle, MediaSessionNotifyType type, const MediaSessionPar *par) ;
+	_MEDIASRV_EXPORT const char * CtxType2String(int type);
 
 #ifdef __cplusplus
 }
 #endif	
 	
-	
-	
-	
-	
-	
-	
-	
+class CObjVar;
+class CCtx;
+class _MEDIASRV_EXPORT CMediasrvCallback
+{
+public:
+	CMediasrvCallback();
+	virtual ~CMediasrvCallback();
+
+public:
+	virtual int OnStreamWillPublish(CCtx *ctx);
+	virtual int OnStreamPublished(CCtx *ctx);
+	virtual int OnStreamPublishClosed(CCtx *ctx);
+
+	virtual int OnStreamWillPlay(CCtx *ctx);
+	virtual int OnStreamPlayClosed(CCtx *ctx);
+
+
+	virtual int OnStreamRecordFinished(CCtx *ctx,const char *szFilePath, const char *szType);
+
+	virtual int OnGetSourceStreamURL(const char *szApp ,const char *szStream, CObjVar *outAddress); //  for cdn support
+
+	virtual int OnAuthVerify(CCtx *ctx);
+};
+
+_MEDIASRV_EXPORT int CtxAddRef(CCtx *ctx);
+_MEDIASRV_EXPORT int CtxRelease(CCtx *ctx);
+_MEDIASRV_EXPORT int CtxClose(CCtx *ctx);
 	
 #endif
 

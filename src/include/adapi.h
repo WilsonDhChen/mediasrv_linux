@@ -474,8 +474,8 @@ int MYAPI strcmpix(const char *szSource,const char *szDest);
 int MYAPI strcmpifind(const char *szSource,const char *szDest);
 int MYAPI strcmpifind_from_end(const char *szSource,const char *szDest,
 							   const void *pHeadPoint);
-int MYAPI strcmpipre(const char *szSource,const char *szDest);
-int MYAPI strcmppre(const char *szSource,const char *szDest);
+int MYAPI strcmpipre(const char *szSourceLong,const char *szDestShort);
+int MYAPI strcmppre(const char *szSourceLong, const char *szDestShort);
 char * MYAPI strcpyn(char *szDest,const char *szSource,int nSize);
 char *  MYAPI strcpyx(char * szDest,const char *szSource);
 int MYAPI strlenx(const char *s);
@@ -827,8 +827,7 @@ void MYAPI MemoryBufferReset( void *hMem );
 #if !defined(WIN32)
 BOOL is_path_match_device(const char *path,const char *szDevPath);
 BOOL find_block_device(const char *path,char *szDevPath,int nLen) ;
-BOOL Serial_SetSpeed(int fd, int speed) ;
-BOOL Serial_SetParity(int fd,int databits,int stopbits,int parity) ;
+BOOL Serial_Conf(int fd,int speed,int databits,int stopbits,int parity,int binMode) ;
 #endif
 
 FILE_HANDLE MYAPI  SerialOpen(const char *szDev,int mode,const char *szOpt /*19200-8-1-N*/,BOOL bNoBlock );
@@ -839,6 +838,7 @@ int			  MYAPI Serial_Read( SERIAL_HANDLE handle, void *buf , int nLen, int timeo
 int			  MYAPI Serial_Write( SERIAL_HANDLE handle, const void *buf , int nLen, int timeout);
 void		  MYAPI Serial_Shutdown( SERIAL_HANDLE handle );
 void		  MYAPI Serial_Close( SERIAL_HANDLE handle );
+int			  MYAPI Serial_EnableBin(SERIAL_HANDLE handle, BOOL bEnable);
 
 #if defined(WIN32) && !defined(_WIN32_WCE)
 

@@ -182,7 +182,7 @@ public:
 public:
 	void SetAlarm(BOOL bAlarm);
 	BOOL GetAlarm();
-	
+	void SetAlarmData(const char *szData);
 	
 	BOOL StartGps(const char *dev, const char *bandrate);
 	BOOL IsGpsRunning();

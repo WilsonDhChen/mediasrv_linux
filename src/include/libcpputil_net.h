@@ -113,7 +113,7 @@ public:
     INET_ADDR_STR m_AddrLocal;
     INET_ADDR_STR m_AddrRemote;
 
-	unsigned int m_nWrittingBytes;
+	int m_nWrittingBytes;
 
 	BOOL m_bConnecting;
     BOOL m_bBadConntext;
@@ -224,6 +224,7 @@ public:
 	CObjNetIOBufferSharedMemory(void *memShared,int memSize,BOOL bMalloc2 = TRUE);
 	virtual ~CObjNetIOBufferSharedMemory();
 	CObjNetIOBufferSharedMemory *Copy();
+	CObjNetIOBufferSharedMemory *CopyNoShare();
 
 public:
 	char *m_BufShared;
@@ -260,7 +261,7 @@ public:
     BOOL BindAddr(int nPort = 80,const char * szBindAddr = NULL, BOOL bIpV6 = FALSE);
     BOOL Start();
     void Shutdown();
-	int  GetBindPort();
+	int  GetBindPort(BOOL bIpV6 = FALSE);
     int  GetConnections();
 
     BOOL Send(CObjConnContext *pContext, CObjNetIOBuffer *pBuffer);
