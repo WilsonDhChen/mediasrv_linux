@@ -1,4 +1,4 @@
-﻿# CDN come soon ! ! !
+﻿# CDN support by lua ! ! !
 
 
 # ETS Mediasrv
@@ -28,6 +28,18 @@ For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 **支持的协议：**  
 1）输入协议，RTMP and ETS    
 2）输出协议，RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS(支持混合一路GPS数据) HTTP-AAC
+
+**支持lua(5.3)：**  
+1）lua脚本在mediasrv.lua中，里面对所有的API函数做了demo,请参考调用示例   
+2）支持推送前鉴权  ,设置是否录制 TS/FLV/MP4    
+3）支持推送成功通知   
+4）支持推送关闭通知   
+5）支持播放前鉴权  
+6）支持播放关闭后通知   
+7）支持录制结束通知    
+8）支持CDN源站地址获取   
+9）支持会话流量获取   
+如果大家还有其他功能想用lua来实现可以通知我  
 
 
 **额外功能：**  
