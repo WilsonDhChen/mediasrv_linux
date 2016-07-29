@@ -47,6 +47,9 @@ For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 2）流媒体服务器直接支持后台录像,录制格式MP4/TS/FLV，也可三种格式同时录制。   
 3）录制可以是NVR(会根据设定的时间分割文件)类型录制，也可以是直播就录制，停直播关闭录制 。  
 
+**RTMP 推送地址：**  
+RTMP rtmp://127.0.0.1/live/chid   
+
 **访问地址示例：**  
 HLS http://127.0.0.1:280/chid/playlist.m3u8    
 RTMP rtmp://127.0.0.1:1935/live/chid    
