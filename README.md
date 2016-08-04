@@ -20,6 +20,7 @@ For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 3）Intel E3 CPU ，10Gb网卡,RTMP稳定输出 8.8Gb/s，HLS稳定输出9Gb/s，稳定并发8K连接   
 4）支持视频秒开,出画面速度0.2-0.3s  
 5）支持集群master/slave,自动请求master
+6）代码仅有60000多行，短小精悍  
 
 **关于并发：**  
 程序本身没有任何并发限制，理论单进程并发在60K左右，但是实际并发数取决于网卡的速率和CPU的性能以及视频码率。期待大家拿更NB的机器测试，性能强劲的机器需要优化mediasrv.ini发挥多CPU性能(这样的设计可以在不支持fork的windows上支持高并发)
@@ -41,11 +42,6 @@ For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 9）支持会话流量获取   
 如果大家还有其他功能想用lua来实现可以通知我  
 
-
-**额外功能：**  
-1）支持插件管理推流权限，推流状态可实时更新到数据库或者redis。   
-2）流媒体服务器直接支持后台录像,录制格式MP4/TS/FLV，也可三种格式同时录制。   
-3）录制可以是NVR(会根据设定的时间分割文件)类型录制，也可以是直播就录制，停直播关闭录制 。  
 
 **RTMP 推送地址：**  
 RTMP rtmp://127.0.0.1/live/chid   
