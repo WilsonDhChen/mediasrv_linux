@@ -66,6 +66,12 @@ HTTP-TS http://127.0.0.1:281/chid.ts
 HTTP-FLV http://127.0.0.1:281/chid.flv    
 HTTP-AAC http://127.0.0.1:281/chid.aac     
 
+**用法**   
+chmod 777 ./mediasrv   
+chmod 777 ./mediasrv_sh   
+./mediasrv_sh   
+
+
 **成功案例**   
 已经广泛给各大集成商做OEM，行业涉及教育(IPTV 直播 电台)，武警（执法巡查 定制化产品 arm linux），石化（灾害监控）
 
