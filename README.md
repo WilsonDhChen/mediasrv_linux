@@ -1,7 +1,5 @@
-﻿# CDN support by lua ! ! !
-
-
-# ETS Mediasrv
+﻿# CDN supported ! ! !     
+# ETS Mediasrv    
 
 ETS Mediasrv which is an excellent cross-platform Live Streaming Server, developed by f117cdh.
 
@@ -19,8 +17,9 @@ For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 2） 7x24 全天候稳定运行。   
 3）Intel E3 CPU ，10Gb网卡,RTMP稳定输出 8.8Gb/s，HLS稳定输出9Gb/s，稳定并发8K连接   
 4）支持视频秒开,出画面速度0.2-0.3s  
-5）支持集群master/slave,自动请求master  
-6）代码仅有60000多行，短小精悍  
+5）支持master/slave,自动请求master  
+6）支持负载均衡 
+7）代码仅有60000多行，短小精悍  
 
 **关于并发：**  
 程序本身没有任何并发限制，理论单进程并发在60K左右，但是实际并发数取决于网卡的速率和CPU的性能以及视频码率。期待大家拿更NB的机器测试，性能强劲的机器需要优化mediasrv.ini发挥多CPU性能(这样的设计可以在不支持fork的windows上支持高并发)
