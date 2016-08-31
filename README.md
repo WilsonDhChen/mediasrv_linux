@@ -15,7 +15,7 @@ For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 **技术参数：**  
 1） 支持多CPU多核心，采用并行流水线架构，多nb的硬件都能完全发挥性能。   
 2） 7x24 全天候稳定运行。   
-3）Intel E3 CPU ，10Gb网卡,RTMP稳定输出 8.8Gb/s，HLS稳定输出9Gb/s，稳定并发8K连接   
+3）Intel E3 CPU ，10Gb网卡,RTMP稳定输出 8.8Gb/s，HLS稳定输出9Gb/s，稳定并发8K连接  ，CPU 占用30%      
 4）支持视频秒开,出画面速度0.2-0.3s  
 5）支持master/slave,自动请求master  
 6）支持负载均衡      
