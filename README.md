@@ -66,9 +66,11 @@ HTTP-TS http://127.0.0.1:281/chid.ts
 HTTP-FLV http://127.0.0.1:281/chid.flv    
 HTTP-AAC http://127.0.0.1:281/chid.aac     
 
-**用法**   
+**运行**   
+给权限    
 chmod 777 ./mediasrv   
 chmod 777 ./mediasrv_sh   
+直接运行    
 ./mediasrv_sh   
 
 
