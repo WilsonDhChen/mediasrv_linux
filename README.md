@@ -18,7 +18,7 @@ For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 3）Intel E3 CPU ，10Gb网卡,RTMP稳定输出 8.8Gb/s，HLS稳定输出9Gb/s，稳定并发8K连接   
 4）支持视频秒开,出画面速度0.2-0.3s  
 5）支持master/slave,自动请求master  
-6）支持负载均衡 
+6）支持负载均衡      
 7）代码仅有60000多行，短小精悍  
 
 **关于并发：**  
