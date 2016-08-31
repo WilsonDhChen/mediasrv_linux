@@ -2,6 +2,9 @@
 #ifndef _libcpputil_amf_h_
 #define _libcpputil_amf_h_
 
+#if defined(WIN32)
+#undef GetProp
+#endif
 
 typedef enum tagRTMPPacketType
 {
@@ -112,6 +115,7 @@ public:
 	CAMFBuffer();
 	~CAMFBuffer();
 	BOOL SetReadPos(int pos, int Align = -1);
+    BOOL SetWritePos(int pos, int Align = -1);
 	BOOL Write( const void* Ptr, int Length, int Align);
 public:
 	int m_chunksize;

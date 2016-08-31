@@ -280,14 +280,14 @@ public:
 
 public: 
     // the follow methods for client use .
-    static SOCKET Connect(char *szAddr,int nPort,unsigned int timeout = 10 );
+    static SOCKET ConnectSocket(char *szAddr,int nPort,unsigned int timeout = 10 );
     static SOCKET ConnectAgentHttps(const char *szAgentUrl,const char *szIP,int nPort,unsigned int timeout = 10);
     static SOCKET ConnectAgentSks4(const char *szAgentUrl,const char *szIP,int nPort,unsigned int timeout = 10);
     static SOCKET ConnectAgentSks5(const char *szAgentUrl,const char *szIP,int nPort,unsigned int timeout = 10);
     BOOL AddSocket2Asyn(CObjConnContext *pSocketConnectByYourself);
 	BOOL AddSocket2Asyn(SOCKET soc, INET_ADDR_STR *remoteAddr = NULL, INET_ADDR_STR *localAddr = NULL);
 
-	BOOL Connect(const char *addr ,int port, CObj *par);
+	BOOL Connect(const char *addr ,int port, CObj *par = NULL);
 public:
 	virtual CObjConnContext  * AllocConnContext(CObj *par);
     virtual CObjNetIOBuffer  * AllocReadIOBuffer();
@@ -354,7 +354,7 @@ public:
 public:
 	virtual CObjNetAsync *CreateNetInstance();
 	virtual int OnNewConnectionIncoming(CObjConnContext *pContext);
-
+    virtual BOOL OnDeleteInstance(CObjNetAsync *ins);
 private:
 	CObj *m_pNetObj;
 };

@@ -501,6 +501,30 @@ public:
 	BOOL	bMalloc2;
 };
 
+class  _CPP_UTIL_EXPORT  CObjArray :
+    public CObj
+{
+
+public:
+    _CPP_UTIL_DYNAMIC_DECLARE(CObjArray);
+    _CPP_UTIL_CLASSNAME_DECLARE(CObjArray);
+    _CPP_UTIL_QUERYOBJ_DECLARE(CObjArray);
+public:
+    CObjArray();
+    virtual ~CObjArray();
+
+    CObjArray(const CObjArray& _this);
+    CObjArray& operator = (const CObjArray& _this);
+
+    void Add(CObj *);
+    int  GetCount();
+    void Clear();
+    CObj *GetAt(int i);
+private:
+
+    CObjBuffer m_arry;
+};
+
 class _CPP_UTIL_EXPORT CObjMemIO
 {
 public:

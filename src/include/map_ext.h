@@ -30,6 +30,10 @@ public:
          MemoryRelease( m_szKey );
  
     }
+    int Length()
+    {
+        return  MemoryStringLen(m_szKey);
+    }
     CStrKey & operator = (const char *szKey)
     {
         if( m_szKey != NULL )

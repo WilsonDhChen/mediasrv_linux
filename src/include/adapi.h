@@ -460,6 +460,7 @@ char * MYAPI WeekToStr(    int week,char *out);
 char * MYAPI MonthToStr(int month,char *out);
 int MYAPI StrMonthToNumber(const char *month);
 int MYAPI atoix(const char *szValue);
+INT64 MYAPI atoi64x(const char *szValue);
 int MYAPI atoin( const char *szValue ,int nCount);
 int MYAPI GetIpPort(const char *szAddr,char *szIPOut,int nIpSize,int *nPortOut);
 char * MYAPI StrUpper(const char *buf);
@@ -699,6 +700,7 @@ IO_HANDLE MYAPI IoHandelCopy(void * hIoMem,IO_HANDLE hIoSrc,int nFileOpenMode);
 
 
 int MYAPI GetCurrentAppPath(char *szPath, int nLen);
+int MYAPI GetCurrentAppDir(char *szPath, int nLen);
 void MYAPI AddDllSearchPath(const char *path);
 void MYAPI AddSearchPath(const char *path);
 
@@ -914,6 +916,7 @@ void *  MYAPI  MemoryAlloc( size_t cb );
 void *  MYAPI  MemoryRealloc( void *p,size_t cb );
 char *  MYAPI  MemoryEmptyString( );
 char *  MYAPI  MemoryString( const char *str, int nLen, int align );
+int     MYAPI  MemoryStringLen(const char *str);
 size_t  MYAPI  MemorySize( void *p );
 INT32    MYAPI  MemoryAddRef( void *p   );
 INT32    MYAPI  MemoryRelease( void *p   );

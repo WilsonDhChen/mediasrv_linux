@@ -80,6 +80,9 @@ chmod 777 ./mediasrv_sh
 Windows  https://github.com/WilsonDhChen/mediasrv_windows     
 MacOSX   https://github.com/WilsonDhChen/mediasrv_macosx
 
+**IPTV 监控行业组件**   
+https://github.com/WilsonDhChen/transcodesrv_linux      
+
 **关于软件更新**   
 Linux 版本我们会实时更新   
 Windows 和 MacOSX版本我们会在重大升级更新一次

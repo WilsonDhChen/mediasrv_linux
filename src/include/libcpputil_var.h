@@ -85,6 +85,7 @@ public:
     BOOL IsNull( );
 	BOOL SetString( const char *str , int nLen = -1 );
 	void SetNull();
+    void Trim();
 
 	void Clear();
 	int  DataLength() const;
@@ -92,6 +93,7 @@ public:
 	const void* Data() const ;
 
 
+    INT64   toInt64();
 	operator int() const; 
 	operator double() const; 
 	operator CObj *() const; 
@@ -112,6 +114,32 @@ public:
 	_CPP_UTIL_QUERYOBJ_DECLARE(CObjVarRef) ;
 public:
 	CObjVar m_var;
+};
+
+class  _CPP_UTIL_EXPORT  CObjVarArray :
+    public CObj
+{
+
+public:
+    _CPP_UTIL_DYNAMIC_DECLARE(CObjVarArray);
+    _CPP_UTIL_CLASSNAME_DECLARE(CObjVarArray);
+    _CPP_UTIL_QUERYOBJ_DECLARE(CObjVarArray);
+public:
+    CObjVarArray();
+    virtual ~CObjVarArray();
+
+    CObjVarArray(const CObjVarArray& _this);
+    CObjVarArray& operator = (const CObjVarArray& _this);
+
+    void Add(CObjVarRef *);
+    int  GetCount()  ;
+    void Clear();
+    BOOL IsExist(const char *str,BOOL ignoreCase = TRUE);
+    CObjVarRef *GetAt(int i) ;
+    int  Split(const char *str,const char *split,BOOL skipEmpty = TRUE);
+private:
+
+    CObjBuffer m_arry;
 };
 
 #endif

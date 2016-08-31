@@ -75,12 +75,14 @@ public:
 	virtual int OnStreamWillPlay(CCtx *ctx);
 	virtual int OnStreamPlayClosed(CCtx *ctx);
 
+	virtual int OnInvalidRequestClosed(CCtx *ctx);
+
 
 	virtual int OnStreamRecordFinished(CCtx *ctx,const char *szFilePath, const char *szType);
 
 	virtual int OnGetSourceStreamURL(const char *szApp ,const char *szStream, CObjVar *outAddress); //  for cdn support
 
-	virtual int OnAuthVerify(CCtx *ctx);
+
 };
 
 _MEDIASRV_EXPORT int CtxAddRef(CCtx *ctx);

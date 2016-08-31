@@ -102,6 +102,8 @@ public:
     void SetContentType( const char *szData );
     void SetContentLength( INT64 length );
     void SetKeepAlive( BOOL bKeepalive );
+    void SetAcceptRanges();
+    void SetContentRange(INT64 begin, INT64 end, INT64 total);
     void SetLastModified( SYSTEMTIME *systime);
 	void SetHeader(const char *name,const char *szData);
 	void AddCookie(const char *name, const char *value, const char *path = NULL, const char *domain = NULL, int expiresSeconds = 0);
