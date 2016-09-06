@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd /opt/mediasrv/
+
 
 screen -dmS mediasrv -s ./mediasrv_sh
 
