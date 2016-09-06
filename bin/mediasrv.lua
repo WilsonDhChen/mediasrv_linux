@@ -1,32 +1,63 @@
-﻿print(_VERSION);
+﻿
 print("/************************************/");
 print("The Lua plugin worked in multithread");
 print("Lua 插件工作在多线程环境中请谨慎编程");
 print("/************************************/");
 
+require("socket")
+
+
+----下面是数据库测试代码，不用可以删除
+
+---MySQL测试代码
+envMysql = luasql.mysql.mysql();
+connMysql , errMysql= envMysql:connect("test1234","root","123456","127.0.0.1",3306);
+print(errMysql);
+
+---Odbc测试代码
+envOdbc = luasql.odbc.odbc();
+connOdbc , errOdbc= envOdbc:connect("test","root","123456");
+print(errOdbc);
+
+---sqlite3测试代码
+envSqlite3 = luasql.sqlite3.sqlite3();
+connSqlite3 , errSqlite3= envSqlite3:connect("test.db");
+print(connSqlite3);
+
+
 print("threadid");
-print(ets.threadid());
+print(app.threadid());
 print("");
 
 print("getappdir");
-print(ets.getappdir());
+print(app.getappdir());
 print("");
 
 print("getworkdir");
-print(ets.getworkdir());
+print(app.getworkdir());
 print("");
 
 print("getinistring");
-print(ets.getinistring("mediasrv","callback_plugin"))
+print(app.getinistring("mediasrv","callback_plugin"))
 print("");
 
 print("getinibool");
-print(ets.getinibool("mediasrv","log_debug"))
+print(app.getinibool("mediasrv","log_debug"))
 print("");
 
 print("getostickcount");
-print(ets.getostickcount());
+print(app.getostickcount());
 print("");
+
+
+mtxUdp = mtx.create();
+mtx.lock(mtxUdp);
+mtx.unlock(mtxUdp);
+---mtx.destroy(mtxUdp);
+
+udpSoc = rdeu.open("",0);
+rdeu.close(udpSoc);
+
 -----------------------------------------------------------------
 ------- all function return 0 successful , else failed -----------
 -----------------------------------------------------------------
@@ -43,66 +74,67 @@ function OnStreamWillPublish( ctx )
 print("------OnStreamWillPublish------");
 
 print("hold ctx");
-ets.ctxaddref(ctx);
+stream.ctxaddref(ctx);
 print("release ctx");
-ets.ctxrelease(ctx);
+stream.ctxrelease(ctx);
 
---- ets.ctxclose(ctx);
+--- stream.ctxclose(ctx);
+--- stream.ctxinvalid(ctx);
 
 print("threadid");
-print(ets.threadid());
+print(app.threadid());
 print("");
 
 print("cid");
-print(ets.getcid(ctx));
+print(stream.getcid(ctx));
 print("");
 
 print("app");
-print(ets.getapp(ctx));
+print(stream.getapp(ctx));
 print("");
 
 print("stream");
-print(ets.getstream(ctx));
+print(stream.getstream(ctx));
 print("");
 
 print("getpeeraddr");
-print(ets.getpeeraddr(ctx));
+print(stream.getpeeraddr(ctx));
 print("");
 
 
 print("getbegintime");
-print(ets.getbegintime(ctx));
+print(stream.getbegintime(ctx));
 print("");
 
 
 print("getbegintickcount");
-print(ets.getbegintickcount(ctx));
+print(stream.getbegintickcount(ctx));
 print("");
 
 
 print("isfromcdn");
-print(ets.isfromcdn(ctx));
+print(stream.isfromcdn(ctx));
 print("");
 
 print("issourcestream");
-print(ets.issourcestream(ctx));
+print(stream.issourcestream(ctx));
 print("");
 
 print("geturiquery");
-print(ets.geturiquery(ctx));
+print(stream.geturiquery(ctx));
 print("");
 
 print("geturiquery_var");
-print(ets.geturiquery_var(ctx,"dd"));
+print(stream.geturiquery_var(ctx,"dd"));
 print("");
 
 print("getprotocol");
-print(ets.getprotocol(ctx));
+print(stream.getprotocol(ctx));
 print("");
 
-ets.setrecord_flv(ctx,1);
-ets.setrecord_mp4(ctx,1);
-ets.setrecord_ts(ctx,1);
+stream.setrecord_flv(ctx,1);
+stream.setrecord_mp4(ctx,1);
+stream.setrecord_ts(ctx,1);
 
 
 return 0 ;
@@ -122,41 +154,41 @@ function OnStreamPublishClosed( ctx )
 print("----------OnStreamPublishClosed-------------");
 
 print("threadid");
-print(ets.threadid());
+print(app.threadid());
 print("");
 
 print("cid");
-print(ets.getcid(ctx));
+print(stream.getcid(ctx));
 print("");
 
 print("app");
-print(ets.getapp(ctx));
+print(stream.getapp(ctx));
 print("");
 
 print("stream");
-print(ets.getstream(ctx));
+print(stream.getstream(ctx));
 print("");
 
 print("getendtime");
-print(ets.getendtime(ctx));
+print(stream.getendtime(ctx));
 print("");
 
 
 print("getendtickcount");
-print(ets.getendtickcount(ctx));
+print(stream.getendtickcount(ctx));
 print("");
 
-local totolSeconds =  (ets.getendtickcount(ctx) -ets.getbegintickcount(ctx) ) /1000 ;
+local totolSeconds =  (stream.getendtickcount(ctx) -stream.getbegintickcount(ctx) ) /1000 ;
 
 print("total");
 print(totolSeconds );
 print("");
 
 print("read speed");
-print( ets.getreadbytes(ctx)/totolSeconds/1024 );
+print( stream.getreadbytes(ctx)/totolSeconds/1024 );
 
 print("write speed");
-print( ets.getwritebytes(ctx)/totolSeconds/1024 );
+print( stream.getwritebytes(ctx)/totolSeconds/1024 );
 
 return 0 ;
 
@@ -166,6 +198,57 @@ end
 ------------------------------------------------
 function OnStreamWillPlay(  ctx )
 print("--------------OnStreamWillPlay---------------------");
+
+print("threadid");
+print(app.threadid());
+print("");
+
+print("cid");
+print(stream.getcid(ctx));
+print("");
+
+print("app");
+print(stream.getapp(ctx));
+print("");
+
+print("stream");
+print(stream.getstream(ctx));
+print("");
+
+print("getpeeraddr");
+print(stream.getpeeraddr(ctx));
+print("");
+
+
+print("getbegintime");
+print(stream.getbegintime(ctx));
+print("");
+
+
+print("getbegintickcount");
+print(stream.getbegintickcount(ctx));
+print("");
+
+
+print("isfromcdn");
+print(stream.isfromcdn(ctx));
+print("");
+
+print("issourcestream");
+print(stream.issourcestream(ctx));
+print("");
+
+print("geturiquery");
+print(stream.geturiquery(ctx));
+print("");
+
+print("geturiquery_var");
+print(stream.geturiquery_var(ctx,"dd"));
+print("");
+
+print("getprotocol");
+print(stream.getprotocol(ctx));
+print("");
 
 
 return 0 ;
@@ -177,7 +260,55 @@ end
 function OnStreamPlayClosed( ctx )
 print("--------------OnStreamPlayClosed--------------");
 
+print("threadid");
+print(app.threadid());
+print("");
 
+print("cid");
+print(stream.getcid(ctx));
+print("");
+
+print("app");
+print(stream.getapp(ctx));
+print("");
+
+print("stream");
+print(stream.getstream(ctx));
+print("");
+
+print("getendtime");
+print(stream.getendtime(ctx));
+print("");
+
+
+print("getendtickcount");
+print(stream.getendtickcount(ctx));
+print("");
+
+local totolSeconds =  (stream.getendtickcount(ctx) -stream.getbegintickcount(ctx) ) /1000 ;
+
+print("total");
+print(totolSeconds );
+print("");
+
+print("read speed");
+print( stream.getreadbytes(ctx)/totolSeconds/1024 );
+
+print("write speed");
+print( stream.getwritebytes(ctx)/totolSeconds/1024 );
+
+
+return 0 ;
+
+
+end
+------------------------------------------------
+function OnInvalidRequestClosed( ctx )
+print("--------------OnInvalidRequestClosed--------------");
+print("invalid request from");
+print(stream.getpeeraddr(ctx));
+print("read");
+print(stream.getreadbytes(ctx));
 return 0 ;
 
 
@@ -201,19 +332,6 @@ return "192.168.1.25" ;
 
 
 end
-
-------------------------------------------------
-function OnAuthVerify( ctx )
-print("--------------OnAuthVerify--------------");
-
-return 0 ;
-
-
-end
-
-
-
-
 
 
 
