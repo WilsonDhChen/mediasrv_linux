@@ -21,7 +21,7 @@ For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 6）支持负载均衡      
 7）支持CDN部署(最大2W节点小型CDN)，部署简单      
 8）支持3台控制服务器热备，任意两台出问题不影响服务      
-9）支持Flash Player推送(H264/speex/framesPerPacket = 1)实验性质    
+9）支持Flash Player推送(H264/speex/framesPerPacket=1)实验性质    
 10）代码仅有60000多行，短小精悍  
 
 **关于并发：**  
