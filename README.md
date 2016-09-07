@@ -21,7 +21,8 @@ For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 6）支持负载均衡      
 7）支持CDN部署(最大2W节点小型CDN)，部署简单      
 8）支持3台控制服务器热备，任意两台出问题不影响服务      
-9）代码仅有60000多行，短小精悍  
+9）支持Flash Player推送(H264/speex/framesPerPacket = 1)实验性质    
+10）代码仅有60000多行，短小精悍  
 
 **关于并发：**  
 程序本身没有任何并发限制，理论单进程并发在60K左右，但是实际并发数取决于网卡的速率和CPU的性能以及视频码率。期待大家拿更NB的机器测试，性能强劲的机器需要优化mediasrv.ini发挥多CPU性能(这样的设计可以在不支持fork的windows上支持高并发)
