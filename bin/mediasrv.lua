@@ -6,9 +6,6 @@ print("/************************************/");
 
 require("socket")
 
-
-----下面是数据库测试代码，不用可以删除
-
 ---MySQL测试代码
 envMysql = luasql.mysql.mysql();
 connMysql , errMysql= envMysql:connect("test1234","root","123456","127.0.0.1",3306);
@@ -324,6 +321,33 @@ return 0 ;
 
 end
 
+------------------------------------------------
+function OnStreamHLSRecordFinished( ctx,fileName,fullPath , dur,beginTm,endTm )
+print("--------------OnStreamHLSRecordFinished--------------");
+print(fileName);
+print(fullPath);
+print(dur);
+print(beginTm);
+print(endTm);
+print("")
+return 0 ;
+
+
+end
+------------------------------------------------
+function OnStreamHLSFlush( ctx)
+print("--------------OnStreamHLSFlush--------------");
+return 0 ;
+
+
+end
+------------------------------------------------
+function OnStreamHLSReOpen( ctx)
+print("--------------OnStreamHLSReOpen--------------");
+return 0 ;
+
+
+end
 ------------------------------------------------
 function OnGetSourceStreamURL( app , stream )
 print("--------------OnGetSourceStreamURL--------------");
