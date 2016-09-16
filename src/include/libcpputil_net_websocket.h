@@ -71,7 +71,7 @@ class  _CPP_UTIL_EXPORT  CWebSocketNetAsync :
 {
 public:
 
-	CWebSocketNetAsync(	int nWaitTimeoutSeconds = -1,int nWorkerThreadsCount = 1,
+	CWebSocketNetAsync(	int nWaitTimeoutSeconds = -1,
 					int nStackSize = 0,int nMaxConnections = 2000,
 					NetAsyncType netType = NetAsyncTypeDefault 
 				);

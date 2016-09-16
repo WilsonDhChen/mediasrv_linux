@@ -81,8 +81,8 @@ public:
 	BOOL operator != (const  int uv) const; 
 
 
-	BOOL IsEmpty();
-    BOOL IsNull( );
+	BOOL IsEmpty() const;
+    BOOL IsNull() const;
 	BOOL SetString( const char *str , int nLen = -1 );
 	void SetNull();
     void Trim();
@@ -137,9 +137,31 @@ public:
     BOOL IsExist(const char *str,BOOL ignoreCase = TRUE);
     CObjVarRef *GetAt(int i) ;
     int  Split(const char *str,const char *split,BOOL skipEmpty = TRUE);
+    int  SplitByChars(const char *str, const char *splitChars, BOOL skipEmpty = TRUE);
 private:
 
     CObjBuffer m_arry;
+};
+
+
+class _CPP_UTIL_EXPORT   CRefString
+{
+public:
+    CRefString(const char *szKey = NULL);
+    CRefString(const CRefString &_this);
+    virtual ~CRefString();
+    int Length();
+    void SetString(const char *str, int nLen = -1);
+    CRefString & operator = (const char *szKey);
+    CRefString & operator = (const CRefString &_this);
+    bool operator == (const  CRefString &_this) const;
+    bool operator > (const  CRefString &_this) const;
+    bool operator < (const  CRefString &_this) const;
+    bool operator >= (const  CRefString &_this) const;
+    bool operator <= (const  CRefString &_this) const;
+    operator const char *();
+public:
+    char *m_szString;
 };
 
 #endif

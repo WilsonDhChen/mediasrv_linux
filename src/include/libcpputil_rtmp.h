@@ -95,9 +95,9 @@ public:
 	int  m_ChunkSizeIn;
 	int  m_ChunkSizeOut;
 	int  m_nBWCheckCounter;
-	int m_nClientBW ;
-	int m_nClientBW2 ;
-	int m_nServerBW ;
+	int m_nClientBandWidth ;
+	int m_nClientLimitType ;
+	int m_nWindowAck ;
 
 	
 
@@ -186,6 +186,7 @@ public:
 	BOOL Send(CObjNetIOBuffer *pBuf);
 	BOOL Sync();
 
+    CRTMPConnContext *GetConnCtx();  // must be release it after use
 	BOOL AddHttpIoBuffer( CObjNetIOBuffer *pBuf );
 	CRTMPHttpIoBuffers *GetHttpIoBuffers();
 
@@ -240,12 +241,15 @@ public:
     
     CObjNetIOBufferRTMP *CreateRTMPIoBuffer();
 
+
 	BOOL SendHttpIoBuffers(CRTMPHttpIoBuffers *ioBufs);
 	BOOL SyncIoBuffer();
 	
+    BOOL SendInvoke(const char *method, const CObjVar &value, double txn = 0);
 	BOOL SendInvokeConnectResult(double txn);
 	BOOL SendInvokeResultNumber(double txn , CObjVar *var);
 	BOOL SendInvokePong(double txn);
+    BOOL SendInvokePing(double txn);
 	BOOL SendInvokeCheckBWResult(double txn);
 	BOOL SendInvokeCallFailed(double txn , const char * method);
 	BOOL SendOnBWDone(double txn);
@@ -254,9 +258,9 @@ public:
 
 	BOOL SendChunkSize(int chunksize  );
 	BOOL SendCtrl(INT16 nType,UINT32 nObject = 0 ,UINT32 nTime = 0 );
-	BOOL SendServerBW(int size); // Window Acknowledgement Size 
-	BOOL SendClientBW(int bw1 , UINT8 bw2);
-	BOOL SendBytesReceived(int bytes);
+    BOOL SendWindowAck(int size); // Window Acknowledgement Size 
+    BOOL SendSetPeerBandwidth(int bw1, UINT8 LimitType);
+    BOOL SendBytesReceived(UINT32 bytes);
 
 
 
@@ -264,6 +268,7 @@ public:
 	BOOL SendPlayStart(const char *details = NULL, const char *clientid = NULL);
 	BOOL SendPlayNotFound();
 	BOOL SendPublishStart(const char * clientId , const char *szDesc);
+    BOOL SendUnPublishSuccess(const char * clientId, const char *szDesc);
 	BOOL SendRtmpSampleAccess();
 	BOOL SendHttpNotFound();
 	CObjNetIOBuffer *SendHttpContentLength(int ContentLength);
@@ -306,7 +311,7 @@ public:
 public:
 	unsigned int m_Protocol;
 
-	CRTMPNetAsync(	int nWaitTimeoutSeconds = -1,int nWorkerThreadsCount = 1,
+	CRTMPNetAsync(	int nWaitTimeoutSeconds = -1,
 		int nStackSize = 0,int nMaxConnections = 2000,
 		NetAsyncType netType = NetAsyncTypeDefault 
 		);

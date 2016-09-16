@@ -34,6 +34,22 @@ public:
     {
         return  MemoryStringLen(m_szKey);
     }
+    void SetString(const char *str, int nLen = -1)
+    {
+        if (m_szKey != NULL)
+        {
+            MemoryRelease(m_szKey);
+            m_szKey = NULL;
+        }
+        if (str == NULL)
+        {
+            m_szKey = MemoryEmptyString();
+        }
+        else
+        {
+            m_szKey = MemoryString(str, nLen, 16);
+        }
+    }
     CStrKey & operator = (const char *szKey)
     {
         if( m_szKey != NULL )

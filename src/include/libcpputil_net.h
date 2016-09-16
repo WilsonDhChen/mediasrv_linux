@@ -251,11 +251,12 @@ public:
 public:
 
 
-    CObjNetAsync(	int nWaitTimeoutSeconds = -1,int nWorkerThreadsCount = 1,
+    CObjNetAsync(	int nWaitTimeoutSeconds = -1,
 					int nStackSize = 0,int nMaxConnections = 2000,
 					NetAsyncType netType = NetAsyncTypeDefault );
     virtual ~CObjNetAsync();
        
+    
     void SetSessionTimeout(int nSeconds = -1);
     void SetMaxConnections(int nCount = 2000);
     BOOL BindAddr(int nPort = 80,const char * szBindAddr = NULL, BOOL bIpV6 = FALSE);
@@ -278,6 +279,8 @@ public:
     void CloseAllConnections();
 	void SetName(const char *szName);
 
+    
+
 public: 
     // the follow methods for client use .
     static SOCKET ConnectSocket(char *szAddr,int nPort,unsigned int timeout = 10 );
@@ -288,10 +291,12 @@ public:
 	BOOL AddSocket2Asyn(SOCKET soc, INET_ADDR_STR *remoteAddr = NULL, INET_ADDR_STR *localAddr = NULL);
 
 	BOOL Connect(const char *addr ,int port, CObj *par = NULL);
+
 public:
 	virtual CObjConnContext  * AllocConnContext(CObj *par);
     virtual CObjNetIOBuffer  * AllocReadIOBuffer();
-	virtual CObj * CreateThreadContext(const CObj *threadObj);
+	virtual CObj * CreateThreadContext();
+    CObj *GetThreadContext();
 
     // return -1 , if you want block the connection
     virtual int OnNewConnectionIncoming(CObjConnContext *pContext);  

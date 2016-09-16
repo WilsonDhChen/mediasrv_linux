@@ -35,6 +35,7 @@ public:
 	int  m_nMaxLogFileSize;
 private:
 	BOOL m_bInited;
+public:
 	MTX_OBJ m_mtxLog;
 };
 

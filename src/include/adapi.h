@@ -938,7 +938,7 @@ void * MYAPI CreateMemoryPool();
 void MYAPI ReleaseMemoryPool(void *p);
 
 void MYAPI PrintBacktrace();
-int MYAPI GetMachineId(char *szOut, int nSize);
+int MYAPI GetMachineId(char *szOut, int nSize,const char *szEth);
 
 #ifdef __cplusplus
 }

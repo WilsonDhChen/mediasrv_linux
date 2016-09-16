@@ -6,7 +6,7 @@
 
 
 #ifndef _XENCODER_EXPORT
-	#ifdef WIN32
+	#if defined(WIN32) && !defined(_XENCODER_STATIC)
 		#ifdef _MSC_VER
 		#define _XENCODER_EXPORT __declspec(dllimport)
 		#else

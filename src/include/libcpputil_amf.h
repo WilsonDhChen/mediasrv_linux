@@ -13,8 +13,8 @@ typedef enum tagRTMPPacketType
 	RTMPPacketType_Unknown0x02	 = 	0x02 ,	//  Unknown	anyone know this one?
 	RTMPPacketType_BytesRead	 = 	0x03 ,	//  Bytes Read	send every x bytes read by both sides
 	RTMPPacketType_Ctrl			 = 	0x04 ,	//  Ping	ping is a stream control message, has subtypes
-	RTMPPacketType_ServerBW		 = 	0x05 ,	//  Server BW	the servers downstream bw
-	RTMPPacketType_ClientBW		 = 	0x06 ,	//  Client BW	the clients upstream bw
+	RTMPPacketType_WindowAck		 = 	0x05 ,	//  Server BW	the servers downstream bw
+	RTMPPacketType_SetPeerBandwidth		 = 	0x06 ,	//  Client BW	the clients upstream bw
 	RTMPPacketType_Unknown0x07	 = 	0x07 ,	//  Unknown	anyone know this one?
 	RTMPPacketType_Audio		 = 	0x08 ,	//  Audio Data	packet containing audio
 	RTMPPacketType_Video		 = 	0x09 ,	//  Video Data	packet containing video data

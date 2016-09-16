@@ -73,6 +73,7 @@ public:
 	virtual int OnStreamPublishClosed(CCtx *ctx);
 
 	virtual int OnStreamWillPlay(CCtx *ctx);
+    virtual int OnStreamPlayStarted(CCtx *ctx);
 	virtual int OnStreamPlayClosed(CCtx *ctx);
 
 	virtual int OnInvalidRequestClosed(CCtx *ctx);
@@ -80,6 +81,13 @@ public:
 
 	virtual int OnStreamRecordFinished(CCtx *ctx,const char *szFilePath, const char *szType);
 
+    virtual int OnStreamHLSRecordFinished(CCtx *ctx, const char *szFileName, const char *szFilePath, double dur,
+        const char *szBeginTime, const char *szEndTime);
+
+    virtual int OnStreamHLSFlush(CCtx *ctx);
+    virtual int OnStreamHLSReOpen(CCtx *ctx);
+
+    virtual int IsInLocalNetwork(const char *reqDevId, CObjVar *outAddress);
 	virtual int OnGetSourceStreamURL(const char *szApp ,const char *szStream, CObjVar *outAddress); //  for cdn support
 
 
@@ -88,7 +96,14 @@ public:
 _MEDIASRV_EXPORT int CtxAddRef(CCtx *ctx);
 _MEDIASRV_EXPORT int CtxRelease(CCtx *ctx);
 _MEDIASRV_EXPORT int CtxClose(CCtx *ctx);
-	
+_MEDIASRV_EXPORT int CtxGetConnections(CCtx *ctx);
+
+_MEDIASRV_EXPORT int GetStreamConnections(const char *szApp ,const char *szStream);
+_MEDIASRV_EXPORT int CtxSendCall(CCtx *ctx,const char *szMethod,CObjVar *value);
+
+_MEDIASRV_EXPORT int GetDevId(CRefString *value);
+_MEDIASRV_EXPORT int GetNodeName(CRefString *value);
+
 #endif
 
 
