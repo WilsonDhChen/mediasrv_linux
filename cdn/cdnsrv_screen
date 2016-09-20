@@ -1,6 +1,5 @@
 #!/bin/sh
 
-cd /opt/mediasrv/
 
 screen -dmS cdnsrv -s ./cdnsrv_sh
 
