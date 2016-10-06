@@ -312,7 +312,7 @@ return 0 ;
 end
 
 ------------------------------------------------
-function OnStreamRecordFinished( ctx,filePath , type )
+function OnStreamRecordFinished( ctx,fileName,filePath , dur,beginTm,endTm ,type )
 print("--------------OnStreamRecordFinished--------------");
 print(filePath);
 print(type);
