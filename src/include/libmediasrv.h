@@ -79,7 +79,9 @@ public:
 	virtual int OnInvalidRequestClosed(CCtx *ctx);
 
 
-	virtual int OnStreamRecordFinished(CCtx *ctx,const char *szFilePath, const char *szType);
+    virtual int OnStreamRecordFinished(CCtx *ctx, const char *szFileName, const char *szFilePath, double dur,
+        const char *szBeginTime, const char *szEndTime, const char *szType);
+    virtual int OnStreamRecordFlush(CCtx *ctx);
 
     virtual int OnStreamHLSRecordFinished(CCtx *ctx, const char *szFileName, const char *szFilePath, double dur,
         const char *szBeginTime, const char *szEndTime);
@@ -103,6 +105,20 @@ _MEDIASRV_EXPORT int CtxSendCall(CCtx *ctx,const char *szMethod,CObjVar *value);
 
 _MEDIASRV_EXPORT int GetDevId(CRefString *value);
 _MEDIASRV_EXPORT int GetNodeName(CRefString *value);
+
+
+
+_MEDIASRV_EXPORT int ConfigSetRecordType(const char *type);
+_MEDIASRV_EXPORT int ConfigSetRecordDuration(int seconds);
+_MEDIASRV_EXPORT int ConfigSetRecordFormat(const char *format);
+
+_MEDIASRV_EXPORT int ConfigSetRecordTsPath(const char *path);
+_MEDIASRV_EXPORT int ConfigSetRecordMp4Path(const char *path);
+_MEDIASRV_EXPORT int ConfigSetRecordFlvPath(const char *path);
+
+_MEDIASRV_EXPORT int ConfigSetRecordTsEnable(BOOL enable);
+_MEDIASRV_EXPORT int ConfigSetRecordMp4Enable(BOOL enable);
+_MEDIASRV_EXPORT int ConfigSetRecordFlvEnable(BOOL enable);
 
 #endif
 

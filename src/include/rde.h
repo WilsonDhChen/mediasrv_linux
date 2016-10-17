@@ -105,6 +105,7 @@ UINT16 MYAPI n2hs(UINT16 nValue);
 SOCKET MYAPI RDE_Connect2UnixSocket(const char *unix_path , int len_path , int timeout );
 SOCKET MYAPI RDE_OpenUnixSocket( const char *unix_path , int len_path );
 SOCKET MYAPI RDE_WaitConnectUnixSocket(SOCKET h_rde);
+SOCKET MYAPI RDE_OpenLinuxHotplug();
 ////////////////////////////////////////////////////
 const char *MYAPI RDE_Error();
 void MYAPI RDE_ErrorFree(const void *p);

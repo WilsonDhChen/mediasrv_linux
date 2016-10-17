@@ -16,7 +16,8 @@ public:
 	void Stop();
 	BOOL IsRunning();
 
-	virtual void OnGpsData(const char *Header, const char *data );
+    virtual CObj *CreateCtx();
+    virtual void OnGpsData(CObj*ctx,const char *Header, const char *data);
 private:
 	void *m_obj;
 };

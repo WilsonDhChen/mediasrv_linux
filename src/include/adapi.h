@@ -150,8 +150,8 @@ typedef void * QUEUE_HANDLE;
 
 #if !defined(_OS_TYPE_UNKNOWN)
 #define _OS_TYPE_UNKNOWN	0
-#define _OS_TYPE_WINDOWS	10
-#define _OS_TYPE_WINCE		11
+#define _OS_TYPE_WINCE		10
+#define _OS_TYPE_WINDOWS	20
 #define _OS_TYPE_UNIX		50
 #endif
 
@@ -829,7 +829,7 @@ void MYAPI MemoryBufferReset( void *hMem );
 #if !defined(WIN32)
 BOOL is_path_match_device(const char *path,const char *szDevPath);
 BOOL find_block_device(const char *path,char *szDevPath,int nLen) ;
-BOOL Serial_Conf(int fd,int speed,int databits,int stopbits,int parity,int binMode) ;
+BOOL Serial_Conf(int fd,int speed,int databits,int stopbits,int parity,int binMode,int flow) ;
 #endif
 
 FILE_HANDLE MYAPI  SerialOpen(const char *szDev,int mode,const char *szOpt /*19200-8-1-N*/,BOOL bNoBlock );

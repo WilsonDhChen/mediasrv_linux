@@ -88,6 +88,11 @@ typedef enum tagXCodec
 
 }XCodec ;
 
+
+#define _H64_NONE_KEY_FRAME  2
+#define _H64_KEY_FRAME  4
+#define _H64_KEY_FRAME_NO_PATCH  5
+
 typedef enum tagLibCamOption
 {
         LibCamOptionUnknown,
