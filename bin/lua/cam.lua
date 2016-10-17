@@ -1,9 +1,13 @@
 
 require("string")
-
+_DBNAME="av4loc"
+_DBUSER="root"
+_DBPWD="123456"
+_DBADDR="127.0.0.1"
+_DBPORT=3306
 ---MySQL
 envMysql = luasql.mysql.mysql();
-conn , errMysql= envMysql:connect("av4loc","root","","127.0.0.1",3306);
+conn , errMysql= envMysql:connect(_DBNAME,_DBUSER,_DBPWD,_DBADDR,_DBPORT);
 
 
 if( errMysql ~=nil)
@@ -78,7 +82,7 @@ function exesql(con,sql)
 
 	if ( con == nil )
 	then
-		mtx.unlock(_mtxDb)
+		mtx.unlock(mtxDb)
 		return nil, "mysql not connected"
 	end
 	
