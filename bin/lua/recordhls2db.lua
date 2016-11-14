@@ -56,21 +56,19 @@ function exesql(con,sql)
 
 	if( errorString ~= nil )
 	then
-		local i,j = string.find(errorString,"gone away")
-		if( i ~= nil and i >= 0 )
-		then
-			conn:close()
-			log.print(log.warning,"mysql is gone away,now reconnect......\n");
-			conn , errMysql= envMysql:connect(_DBNAME,_DBUSER,_DBPWD,_DBADDR,_DBPORT);
 
-			if( errMysql ~=nil)
-			then 
-				errorString = errMysql
-			else
-				cursor,errorString  = conn:execute(   sql      )
-			end
+		conn:close()
+		log.print(log.warning,"mysql is gone away,now reconnect......\n");
+		conn , errMysql= envMysql:connect(_DBNAME,_DBUSER,_DBPWD,_DBADDR,_DBPORT);
 
+		if( errMysql ~=nil)
+		then 
+			errorString = errMysql
+		else
+			cursor,errorString  = conn:execute(   sql      )
 		end
+
+	
 
 	end
 
