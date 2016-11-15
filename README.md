@@ -12,7 +12,7 @@ Supported protocols:
 For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 
 **支持的协议：**  
-1）输入协议，RTMP/ETS    
+1）输入协议，RTMP   
 2）输出协议，RTMP/HLS
 
 **RTMP 推送地址：**  
