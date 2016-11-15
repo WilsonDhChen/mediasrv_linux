@@ -6,7 +6,7 @@ ETS Mediasrv which is an excellent cross-platform Live Streaming Server, develop
 Support Linux Windows MacOSX and ARM-Linux platform.
 
 Supported protocols:   
-1)Input protocol, RTMP and ETS    
+1)Input protocol, RTMP 
 2)Output protocol, RTMP HLS 
 
 For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
