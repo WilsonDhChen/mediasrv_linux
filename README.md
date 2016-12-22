@@ -43,7 +43,7 @@ For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 7）支持录制结束通知    
 8）支持CDN源站地址获取   
 9）支持会话流量获取   
-如果大家还有其他功能想用lua来实现可以通知我  
+
 
 
 **RTMP 推送地址：**  
