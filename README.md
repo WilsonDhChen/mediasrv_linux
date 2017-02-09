@@ -24,6 +24,8 @@ For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 9）支持Flash Player推送   
 10）行业内第一个支持虚拟直播的服务器，RTMP信号源自由切换，播放不间断(可做电影频道，插播广告)   
 11）代码仅有60000多行，短小精悍  
+12）Onvif output support    
+
 
 **关于并发：**  
 程序总并发没有任何限制，单路视频并发设计最大是15K，但是实际并发数取决于网卡的速率和CPU的性能以及视频码率。期待大家拿更NB的机器测试，性能强劲的机器需要优化mediasrv.ini发挥多CPU性能(这样的设计可以在不支持fork的windows上支持高并发)
