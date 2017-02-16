@@ -60,7 +60,9 @@ RTSP rtsp://127.0.0.1:554/live/chid
 HTTP-TS http://127.0.0.1:281/live/chid.ts     
 HTTP-FLV http://127.0.0.1:281/live/chid.flv    
 HTTP-AAC http://127.0.0.1:281/live/chid.aac   
-
+视频快照     
+http://127.0.0.1:281/live/chid.snapshot
+http://127.0.0.1:554/live/chid.snapshot
     
 
 **运行**   
