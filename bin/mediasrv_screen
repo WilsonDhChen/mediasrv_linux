@@ -1,6 +1,0 @@
-#!/bin/sh
-
-
-
-screen -dmS mediasrv -s ./mediasrv_sh
-
