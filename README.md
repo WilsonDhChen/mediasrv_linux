@@ -13,10 +13,17 @@ Supported protocols:
 For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 
 **技术参数：**  
-1）支持master/slave,自动请求master  
-2）支持负载均衡/集群      
-3）支持CDN部署(最大2W节点小型CDN)，部署简单      
-4）支持3台控制服务器热备，任意两台出问题不影响服务      
+1） 支持多CPU多核心，采用并行流水线架构，多nb的硬件都能完全发挥性能。   
+2） 7x24 全天候稳定运行。   
+3）Intel E3 CPU ，10Gb网卡,RTMP稳定输出 8.8Gb/s，HLS稳定输出9Gb/s，稳定并发8K连接  ，CPU 占用30%      
+4）支持视频秒开,出画面速度0.2-0.3s  
+5）支持master/slave,自动请求master  
+6）支持负载均衡/集群      
+7）支持CDN部署(最大2W节点小型CDN)，部署简单      
+8）支持3台控制服务器热备，任意两台出问题不影响服务      
+9）支持Flash Player推送   
+10）行业内第一个支持虚拟直播的服务器，RTMP信号源自由切换，播放不间断(可做电影频道，插播广告)   
+11）ONVIF support, PTZ support with lua
 
 
 **关于并发：**  
@@ -25,7 +32,8 @@ For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 
 **支持的协议：**  
 1）输入协议，RTMP and ETS    
-2）输出协议，RTMP  HLS(Memory file support)
+2）输出协议，RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS(支持混合一路GPS数据) HTTP-AAC    
+以上所有协议都支持SSL传输
 
 **支持lua(5.3)：**  
 1）lua脚本在mediasrv.lua中，里面对所有的API函数做了demo,请参考调用示例   
@@ -48,7 +56,13 @@ RTMP rtmp://127.0.0.1/live/chid
 live是RTMP推送指定的App   
 HLS http://127.0.0.1:280/live/chid/playlist.m3u8    
 RTMP rtmp://127.0.0.1:1935/live/chid    
-
+RTSP rtsp://127.0.0.1:554/live/chid     
+HTTP-TS http://127.0.0.1:281/live/chid.ts     
+HTTP-FLV http://127.0.0.1:281/live/chid.flv    
+HTTP-AAC http://127.0.0.1:281/live/chid.aac   
+视频快照     
+http://127.0.0.1:281/live/chid.snapshot      
+http://127.0.0.1:554/live/chid.snapshot
     
 
 **运行**   
