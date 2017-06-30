@@ -23,7 +23,7 @@ For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
 8）支持3台控制服务器热备，任意两台出问题不影响服务      
 9）支持Flash Player推送   
 10）行业内第一个支持虚拟直播的服务器，RTMP信号源自由切换，播放不间断(可做电影频道，插播广告)   
-11）ONVIF support, PTZ support with lua
+11）ONVIF support, PTZ support with lua   
 12）GB28181 input/output
 
 
