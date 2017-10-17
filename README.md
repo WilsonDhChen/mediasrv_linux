@@ -9,8 +9,7 @@ Supported protocols:
 1)Input protocol, RTMP and ETS    
 2)Output protocol, RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS HTTP-AAC
 
-
-For commercial support, please contact   f117cdh@qq.com.   QQ qun:144324691
+QQ qun:144324691
 
 **技术参数：**  
 1） 支持多CPU多核心，采用并行流水线架构，多nb的硬件都能完全发挥性能。   
@@ -84,6 +83,10 @@ MacOSX   https://github.com/WilsonDhChen/mediasrv_macosx
 
 **IPTV 监控行业组件**   
 https://github.com/WilsonDhChen/transcodesrv_linux      
+
+
+**捐赠**    
+支付宝 f117cdh@qq.com      
 
 **关于软件更新**   
 Linux 版本我们会实时更新   
