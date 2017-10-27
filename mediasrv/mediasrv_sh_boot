@@ -12,7 +12,7 @@ export PATH=$PATH:$CURDIR
 
 ulimit -n 50000
 chmod 777 ./mediasrv
-rm -rf ./log
+
 sleep 30
 while [ 1 ]
 do

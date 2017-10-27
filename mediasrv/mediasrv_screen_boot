@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd /opt/mediasrv
+cd /opt/nvr/mediasrv
 
 screen -dmS mediasrv -s ./mediasrv_sh_boot
 

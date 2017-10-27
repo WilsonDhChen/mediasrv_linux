@@ -1,0 +1,33 @@
+#!/bin/sh 
+
+
+chmod 777 ./mediasrv
+chmod 777 ./mediasrv_gdb
+chmod 777 ./mediasrv_screen
+chmod 777 ./mediasrv_screen_boot
+chmod 777 ./mediasrv_sh
+chmod 777 ./mediasrv_sh_boot
+chmod 777 ./mediasrv_start
+chmod 777 ./screen
+chmod 777 ./rc.local
+cp -f ./screen /bin/
+cp -f ./rc.local /etc/rc.d/
+
+chmod 777 /etc/rc.d/rc.local
+chmod 777 /bin/screen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

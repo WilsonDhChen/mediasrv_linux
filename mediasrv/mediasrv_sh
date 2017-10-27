@@ -9,12 +9,14 @@ echo  "1" > /proc/sys/kernel/core_uses_pid
 CURDIR=$(pwd)
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CURDIR
 export PATH=$PATH:$CURDIR
+export MALLOC_ARENA_MAX=1
 
 ulimit -n 50000
 chmod 777 ./mediasrv
-rm -rf ./log
-#while [ 1 ]
-#do
-    ./mediasrv  $1
-#    sleep 10
-#done
+
+
+while [ 1 ]
+do
+    ./mediasrv
+    sleep 10
+done
