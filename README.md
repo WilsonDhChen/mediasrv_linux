@@ -46,7 +46,8 @@ QQ qun:144324691
 8）支持CDN源站地址获取   
 9）支持会话流量获取   
 
-**RTSP 推送地址：(H265 support) **   
+**RTSP 推送地址：(H265 support)**  
+
 ./ffmpeg.exe  -rtsp_transport tcp -i rtsp://192.168.1.161/ -vcodec copy   -acodec copy -rtsp_transport tcp  -f rtsp rtsp://127.0.0.1/live/test   
 
 **RTMP 推送地址：**  
