@@ -6,7 +6,7 @@ ETS Mediasrv which is an excellent cross-platform Live Streaming Server, develop
 Support Linux Windows MacOSX and ARM-Linux platform.
 
 Supported protocols:   
-1)Input protocol, RTMP and ETS    
+1)Input protocol, RTMP/RTSP and ETS    
 2)Output protocol, RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS HTTP-AAC
 
 QQ qun:144324691
@@ -31,7 +31,7 @@ QQ qun:144324691
 
 
 **支持的协议：**  
-1）输入协议，RTMP and ETS    
+1）输入协议，RTMP/RTSP and ETS    
 2）输出协议，RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS(支持混合一路GPS数据) HTTP-AAC    
 以上所有协议都支持SSL传输
 
@@ -46,18 +46,18 @@ QQ qun:144324691
 8）支持CDN源站地址获取   
 9）支持会话流量获取   
 
-
-
+**RTSP 推送地址：(H265 support) ** 
+./ffmpeg.exe  -rtsp_transport tcp -i rtsp://192.168.1.161/ -vcodec copy   -acodec copy -rtsp_transport tcp  -f rtsp rtsp://127.0.0.1/live/test
 **RTMP 推送地址：**  
 RTMP rtmp://127.0.0.1/live/chid   
 
 **访问地址示例：**  
 
 live是RTMP推送指定的App   
-HLS http://127.0.0.1:280/live/chid/playlist.m3u8    
+HLS http://127.0.0.1:280/live/chid.m3u8    (H265 support)
 RTMP rtmp://127.0.0.1:1935/live/chid    
-RTSP rtsp://127.0.0.1:554/live/chid     
-HTTP-TS http://127.0.0.1:281/live/chid.ts     
+RTSP rtsp://127.0.0.1:554/live/chid     (H265 support)
+HTTP-TS http://127.0.0.1:281/live/chid.ts     (H265 support)
 HTTP-FLV http://127.0.0.1:281/live/chid.flv    
 HTTP-AAC http://127.0.0.1:281/live/chid.aac   
 视频快照     
