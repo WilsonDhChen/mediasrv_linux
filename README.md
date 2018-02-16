@@ -48,7 +48,7 @@ QQ qun:144324691
 
 **RTSP 推送地址：(H265 support)**  
 
-./ffmpeg.exe  -rtsp_transport tcp -i rtsp://192.168.1.161/ -vcodec copy   -acodec copy -rtsp_transport tcp  -f rtsp rtsp://127.0.0.1/live/test   
+./ffmpeg.exe  -rtsp_transport tcp -i rtsp://192.168.1.161/ -vcodec copy   -acodec copy -rtsp_transport tcp  -f rtsp rtsp://127.0.0.1/live/chid   
 
 **RTMP 推送地址：**  
 
