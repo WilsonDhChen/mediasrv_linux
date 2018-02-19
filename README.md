@@ -6,7 +6,7 @@ lyVTS Mediasrv which is an excellent cross-platform Live Streaming Server, devel
 Support Linux Windows MacOSX and ARM-Linux platform.
 
 Supported protocols:   
-1)Input protocol, RTMP/RTSP    
+1)Input protocol, RTMP/RTSP(H265 support)    
 2)Output protocol, RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS HTTP-AAC
 
 QQ qun:144324691
@@ -31,7 +31,7 @@ QQ qun:144324691
 
 
 **支持的协议：**  
-1）输入协议，RTMP/RTSP    
+1）输入协议，RTMP/RTSP(H265 support)    
 2）输出协议，RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS(支持混合一路GPS数据) HTTP-AAC    
 以上所有协议都支持SSL传输
 
