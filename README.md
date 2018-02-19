@@ -1,12 +1,12 @@
 ﻿ 
-# ETS Mediasrv H265 Support    
+# lyVTS Mediasrv H265 Support    
 
-ETS Mediasrv which is an excellent cross-platform Live Streaming Server, developed by f117cdh.
+lyVTS Mediasrv which is an excellent cross-platform Live Streaming Server, developed by f117cdh.
 
 Support Linux Windows MacOSX and ARM-Linux platform.
 
 Supported protocols:   
-1)Input protocol, RTMP/RTSP and ETS    
+1)Input protocol, RTMP/RTSP    
 2)Output protocol, RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS HTTP-AAC
 
 QQ qun:144324691
