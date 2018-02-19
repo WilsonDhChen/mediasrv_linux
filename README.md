@@ -1,5 +1,5 @@
 ﻿ 
-# lyVTS Mediasrv H265 Support    
+# lyVTS Mediasrv (H265 Support)    
 
 lyVTS Mediasrv which is an excellent cross-platform Live Streaming Server, developed by LanYu(Dalian).Inc .
 
