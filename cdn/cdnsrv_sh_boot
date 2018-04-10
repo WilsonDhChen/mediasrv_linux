@@ -12,6 +12,8 @@ export PATH=$PATH:$CURDIR
 
 ulimit -n 50000
 chmod 777 ./cdnsrv
+
+
 while [ 1 ]
 do
     ./cdnsrv  $1

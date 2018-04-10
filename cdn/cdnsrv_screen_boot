@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd /opt/cdnsrv
+
+screen -dmS cdnsrv -s ./cdnsrv_sh_boot
+
