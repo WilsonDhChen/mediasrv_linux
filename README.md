@@ -7,7 +7,7 @@ Support Linux Windows MacOSX and ARM-Linux platform.
 
 Supported protocols:   
 1)Input protocol, WebRTC/RTMP/RTSP/GB28181 (H265 support)    
-2)Output protocol, RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS HTTP-AAC GB28181 WebRTC 
+2)Output protocol, RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS HTTP-AAC GB28181 WebRTC UDP-Multicast 
 
 QQ qun:144324691
 
@@ -34,7 +34,7 @@ QQ qun:144324691
 
 **支持的协议：**  
 1）输入协议，WebRTC/RTMP/RTSP/GB28181    
-2）输出协议，RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS(支持混合一路GPS数据) HTTP-AAC GB28181 WebRTC    
+2）输出协议，RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS(支持混合一路GPS数据) HTTP-AAC GB28181 WebRTC UDP组播输出    
 以上所有协议都支持SSL传输
 
 **支持lua(5.3)：**  
