@@ -1,7 +1,7 @@
 ﻿ 
 # lyVTS Mediasrv (H265 Support)    
 
-lyVTS Mediasrv which is an excellent cross-platform Live Streaming Server, developed by LanYu(Dalian).Inc .
+lyVTS Mediasrv which is an excellent cross-platform Live Streaming Server, developed by coder .
 
 Support Linux Windows MacOSX and ARM-Linux platform.
 
@@ -25,7 +25,7 @@ QQ qun:144324691
 11）ONVIF support, PTZ support with lua   
 12）GB/T28181-2011/2016(支持通过海康私有协议与海康平台传视频，视频输出更稳定) input/output   
 13）支持多盘高速读写，硬盘写入与网卡完美匹配   
-14）支持狂躁模式   
+14）支持狂躁模式   
 15）单台服务器支持域名隔离   
 
 
