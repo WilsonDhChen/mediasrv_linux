@@ -33,8 +33,8 @@ QQ qun:144324691
 
 
 **支持的协议：**  
-1）输入协议，RTMP/RTSP(H265 support)    
-2）输出协议，RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS(支持混合一路GPS数据) HTTP-AAC    
+1）输入协议，WebRTC/RTMP/RTSP/GB28181    
+2）输出协议，RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS(支持混合一路GPS数据) HTTP-AAC  WebRTC    
 以上所有协议都支持SSL传输
 
 **支持lua(5.3)：**  
