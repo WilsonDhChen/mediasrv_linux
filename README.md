@@ -9,7 +9,6 @@ Supported protocols:
 1)Input protocol, WebRTC/RTMP/RTSP/GB28181 (H265 support)    
 2)Output protocol, RTMP RTMPT HLS(Memory file support) RTSP HTTP-FLV(support video/audio only) HTTP-TS HTTP-AAC GB28181 WebRTC UDP-Multicast 
 
-QQ qun:144324691
 
 **技术参数：**  
 1） 支持多CPU多核心，采用并行流水线架构，多nb的硬件都能完全发挥性能。   
@@ -78,9 +77,6 @@ chmod 777 ./mediasrv_sh
 ./mediasrv_sh   
 
 
-**成功案例**   
-行业涉及教育(IPTV 直播 电台)，武警（执法巡查 定制化产品 arm linux），石化（灾害监控），雪亮工程
-
 
 **其他版本**   
 Windows  https://github.com/WilsonDhChen/mediasrv_windows     
@@ -98,4 +94,4 @@ Linux 版本我们会实时更新
 Windows 和 MacOSX版本我们会在重大升级更新一次
 
 
-**欢迎大家提出建议 QQ群:144324691**
+**欢迎大家提出建议 QQ:21798199**
